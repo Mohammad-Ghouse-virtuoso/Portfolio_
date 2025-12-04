@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Cache (Windows npm cache accidentally added)
+C:\npm-cache/
+.cache/
+*.local
+
+# Test artifacts
+playwright-report/
+test-results/
+coverage/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Replit artifacts
+Replit_*.md
+Replit_*.png
+Orchids_MVP.png
+
+# Project abstracts (internal docs)
+*-abstract.md
+
+# Draft content files
+bio.txt
+contacts.txt
+interests.txt
+skills.txt

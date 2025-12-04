@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Green orbital ring -->
+  <ellipse cx="32" cy="32" rx="28" ry="20" fill="none" stroke="#4ADE80" stroke-width="5" transform="rotate(-35 32 32)" stroke-linecap="round"/>
+  
+  <!-- Blue blob base -->
+  <ellipse cx="32" cy="34" rx="22" ry="16" fill="#6366F1"/>
+  <circle cx="20" cy="30" r="8" fill="#6366F1"/>
+  <circle cx="44" cy="30" r="8" fill="#6366F1"/>
+  <circle cx="32" cy="42" r="6" fill="#6366F1"/>
+  
+  <!-- Small decorative dots -->
+  <circle cx="50" cy="48" r="3" fill="#6366F1"/>
+  <circle cx="28" cy="18" r="2" fill="#6366F1"/>
+  
+  <!-- MG Text -->
+  <text x="32" y="38" text-anchor="middle" fill="white" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-size="14" font-weight="bold">MG</text>
+</svg>
