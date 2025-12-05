@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "install": "echo 'Dependencies installed'"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.0",
