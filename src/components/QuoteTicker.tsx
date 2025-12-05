@@ -122,11 +122,6 @@ const QuoteTicker = () => {
             </button>
           ))}
         </div>
-
-        {/* Keyboard hint */}
-        <p className="text-center mt-8 text-[10px] font-mono text-text-muted/40">
-          Click to explore • Auto-advances every 8s
-        </p>
       </div>
     </section>
   );
