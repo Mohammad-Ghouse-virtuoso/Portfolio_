@@ -56,11 +56,16 @@ Architecture thinking, debugging, scalability mindset
 
 # Problem-Solving
 Pattern recognition, critical reasoning, structured thinking`,
-  '~/skills/design.md': `# Markets & Finance
-Trading, market structures, global finance
+  '~/skills/design.md': `# Design Thinking
+User-centric approach, visual systems, prototyping
 
 # Additional Skills
 System design, data analysis, strategic planning`,
+  '~/skills/finance.md': `# Markets & Finance
+Trading, market structures, global finance
+
+# Investment
+Technical analysis, portfolio thinking, risk management`,
 };
 
 const AboutTerminal = () => {
