@@ -10,7 +10,7 @@ interface HistoryItem {
 const fileSystem: Record<string, string[] | string> = {
   '~': ['about/', 'skills/', 'contact.txt', 'interests.txt'],
   '~/about': ['bio.txt', 'philosophy.txt'],
-  '~/skills': ['frontend.md', 'backend.md', 'design.md'],
+  '~/skills': ['frontend.md', 'backend.md', 'design.md', 'finance.md'],
 };
 
 const fileContents: Record<string, string | JSX.Element> = {
