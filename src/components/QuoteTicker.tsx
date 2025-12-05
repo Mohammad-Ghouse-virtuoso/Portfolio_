@@ -33,15 +33,17 @@ const QuoteTicker = () => {
         {/* Quote Icon */}
         <Quote className="w-8 h-8 text-accent-glow/30 mx-auto mb-6" />
         
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -30, scale: 0.95 }}
-            transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
-            className="flex flex-col items-center gap-6"
-          >
+        {/* Fixed height container to prevent CLS during quote transitions */}
+        <div className="min-h-[160px] md:min-h-[120px] flex items-center justify-center">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+              className="flex flex-col items-center gap-6"
+            >
             <p className="text-xl md:text-3xl lg:text-4xl font-serif leading-relaxed text-text">
               "{quotes[currentIndex].text}"
             </p>
@@ -54,6 +56,7 @@ const QuoteTicker = () => {
             </div>
           </motion.div>
         </AnimatePresence>
+        </div>
 
         {/* Progress Dots */}
         <div className="flex justify-center gap-2 mt-10">

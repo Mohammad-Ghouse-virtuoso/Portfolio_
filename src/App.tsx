@@ -1,11 +1,20 @@
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import AsciiHero from './components/AsciiHero';
-import AboutTerminal from './components/AboutTerminal';
 import QuoteTicker from './components/QuoteTicker';
-import ProjectSection from './components/ProjectSection';
-import InspirationSection from './components/InspirationSection';
-import ContactForm from './components/ContactForm';
 import SocialDock from './components/SocialDock';
+
+// Lazy load below-fold components for faster initial load
+const AboutTerminal = lazy(() => import('./components/AboutTerminal'));
+const ProjectSection = lazy(() => import('./components/ProjectSection'));
+const InspirationSection = lazy(() => import('./components/InspirationSection'));
+const ContactForm = lazy(() => import('./components/ContactForm'));
+
+// Minimal loading placeholder that doesn't cause layout shift
+const SectionLoader = () => (
+  <div className="min-h-[400px] flex items-center justify-center">
+    <div className="w-6 h-6 border-2 border-accent-teal/30 border-t-accent-teal rounded-full animate-spin" />
+  </div>
+);
 
 function App() {
   // Ensure page starts at top on refresh
@@ -19,10 +28,18 @@ function App() {
     <main className="min-h-screen w-full selection:bg-accent-violet/30 selection:text-accent-violet relative bg-background text-text-primary overflow-x-hidden">
       <AsciiHero />
       <QuoteTicker />
-      <AboutTerminal />
-      <ProjectSection />
-      <InspirationSection />
-      <ContactForm />
+      <Suspense fallback={<SectionLoader />}>
+        <AboutTerminal />
+      </Suspense>
+      <Suspense fallback={<SectionLoader />}>
+        <ProjectSection />
+      </Suspense>
+      <Suspense fallback={<SectionLoader />}>
+        <InspirationSection />
+      </Suspense>
+      <Suspense fallback={<SectionLoader />}>
+        <ContactForm />
+      </Suspense>
       <SocialDock />
       
       <footer className="pt-16 pb-32 px-4 md:px-8 border-t border-white/5 mt-20">

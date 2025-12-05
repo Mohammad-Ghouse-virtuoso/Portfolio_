@@ -38,7 +38,8 @@ export const projects: Project[] = [
     ascii: "[o_o]",
     impact: "Increased conversion rate by 25% and reduced bounce rate by 15% within the first month of launch.",
     className: "md:col-span-2 md:row-span-2",
-    sourceUrl: "https://github.com/Mohammad-Ghouse-virtuoso/cookie-gallery_"
+    sourceUrl: "https://github.com/Mohammad-Ghouse-virtuoso/cookie-gallery_",
+    liveUrl: "https://cookiegallery.mohammad-ghouse.site/"
   },
   {
     title: "EventiFy",

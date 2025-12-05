@@ -13,6 +13,9 @@ C:\npm-cache/
 playwright-report/
 test-results/
 coverage/
+**/Portfolio_ results/
+e2e/results/
+*.mp4
 
 # IDE
 .vscode/

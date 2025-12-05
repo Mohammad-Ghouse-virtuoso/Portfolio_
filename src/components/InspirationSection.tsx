@@ -54,12 +54,16 @@ const InspirationSection = () => {
               animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
               exit={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="relative group cursor-pointer h-[400px]"
+              className="relative group cursor-pointer aspect-[2/3]"
             >
               <div className="h-full w-full overflow-hidden rounded-2xl bg-surface border border-border relative">
                 <img
                   src={item.image}
                   alt={item.name}
+                  width={400}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out scale-100 group-hover:scale-110"
                 />
                 

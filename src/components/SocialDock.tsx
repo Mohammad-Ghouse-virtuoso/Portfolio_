@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { useMagnetic } from '../hooks/useMagnetic';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 // Custom X (formerly Twitter) icon
 const XIcon = ({ size = 20 }: { size?: number }) => (
@@ -32,16 +32,28 @@ const SocialItem = ({ icon: Icon, href }: { icon: any, href: string }) => {
 
 const SocialDock = () => {
   const [isAtBottom, setIsAtBottom] = useState(false);
+  const rafId = useRef<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.innerHeight + window.scrollY;
-      const bottomThreshold = document.documentElement.scrollHeight - 100;
-      setIsAtBottom(scrollPosition >= bottomThreshold);
+      // Throttle scroll updates to animation frames
+      if (rafId.current !== null) return;
+      
+      rafId.current = requestAnimationFrame(() => {
+        const scrollPosition = window.innerHeight + window.scrollY;
+        const bottomThreshold = document.documentElement.scrollHeight - 100;
+        setIsAtBottom(scrollPosition >= bottomThreshold);
+        rafId.current = null;
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafId.current !== null) {
+        cancelAnimationFrame(rafId.current);
+      }
+    };
   }, []);
 
   return (
