@@ -35,7 +35,6 @@ describe('ProjectSection', () => {
     render(<ProjectSection />);
     
     const firstProject = projects[0];
-    const projectCard = screen.getByText(firstProject.title).closest('div[class*="relative"]'); // SpotlightCard wrapper
     
     // We need to find the clickable element. SpotlightCard passes onClick to motion.div
     // Let's click the title to be safe as it bubbles up
