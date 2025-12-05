@@ -122,20 +122,6 @@ Deployed on **Vercel** with automatic CI/CD on push to `main`.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Mohammad-Ghouse-virtuoso/Portfolio_)
 
-## 📋 Pre-Production Checklist
-
-Before going live, verify:
-
-- [ ] **Web3Forms key** — Test contact form submission
-- [ ] **Meta tags** — Update `index.html` with proper OG tags for LinkedIn preview
-- [ ] **Favicon** — Verify favicon appears correctly
-- [ ] **Mobile responsive** — Test on actual devices
-- [ ] **Performance** — Run Lighthouse audit (aim for 90+ scores)
-- [ ] **Links** — Verify all social links and project URLs work
-- [ ] **Images** — Confirm all inspiration images load
-- [ ] **Console errors** — Check browser console is clean
-- [ ] **404 handling** — Verify Vercel handles SPA routing
-
 ## 🔗 Links
 
 - **Live Site**: [mohammad-ghouse.site](https://mohammad-ghouse.site)
