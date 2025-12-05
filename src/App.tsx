@@ -36,7 +36,7 @@ function App() {
           <div className="text-center md:text-left">
             <h3 className="font-mono text-sm text-accent-teal mb-2">~/mohammad-ghouse</h3>
             <p className="text-xs text-text-muted leading-relaxed">
-              Architecting digital experiences<br />from Hyderabad, India 🇮🇳
+              "One must imagine Sisyphus happy."<br />— Hyderabad, India 🇮🇳
             </p>
           </div>
 
