@@ -308,7 +308,6 @@ const AboutTerminal = () => {
               className="flex-1 bg-transparent outline-none text-text caret-accent-glow"
               spellCheck={false}
               autoComplete="off"
-              autoFocus
               aria-label="Terminal input"
             />
             <span className="animate-pulse text-white">_</span>
