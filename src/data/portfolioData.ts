@@ -26,8 +26,8 @@ export const projects: Project[] = [
     title: "Cookie Gallery",
     desc: "Artisanal bakery e-commerce with 3D interactions.",
     overview: "A high-performance e-commerce platform for a boutique bakery, featuring immersive 3D product visualizations and a seamless checkout experience. The project aimed to bridge the gap between physical sensory appeal and digital convenience.",
-    problem: "The client struggled with low conversion rates due to static product imagery that failed to convey the texture and quality of their artisanal goods. Traditional e-commerce templates were too rigid for their brand identity.",
-    solution: "Developed a custom storefront using React Three Fiber for interactive 3D cookie models, allowing users to inspect texture and toppings. Integrated a headless CMS for easy inventory management and Stripe for secure, frictionless payments.",
+    problem: "A home-based artisan cookie business was stuck taking orders through Instagram DMs and WhatsApp—losing track of conversations, manually calculating totals, and missing payments. There was no way to showcase their full menu, handle secure transactions, or look professional enough to scale beyond word-of-mouth customers.",
+    solution: "Built a complete e-commerce storefront from scratch with React 19 and TypeScript, featuring a visual cookie catalogue with nutritional info, ephemeral cart system, and Stripe-powered checkout for secure payments. Deployed on Vercel (frontend) and Railway (backend) with Firebase handling authentication and order storage—giving the business a professional online presence that converts browsers into buyers.",
     features: [
       "Interactive 3D Product Viewer (React Three Fiber)",
       "Real-time Inventory Management (Sanity CMS)",
