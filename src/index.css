@@ -188,95 +188,90 @@
 .glitch-text {
   position: relative;
   display: inline-block;
-  /* Default state: CRT signal dropping */
-  animation: 
-    crt-roll 4s ease-in-out infinite,
-    crt-flicker 2s linear infinite,
-    crt-color-bleed 3s ease-in-out infinite;
+  /* Subtle chromatic shimmer - organic breathing motion */
+  animation: chromatic-breathe 4s ease-in-out infinite;
 }
 
-/* Scanline overlay when not hovered */
-.glitch-text::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -5%;
-  width: 110%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.15) 2px,
-    rgba(0, 0, 0, 0.15) 4px
-  );
-  pointer-events: none;
-  animation: crt-scanline 8s linear infinite;
-  z-index: 1;
-}
-
-/* Color ghost layers */
+/* Chromatic ghost layer - no visible box */
 .glitch-text::after {
   content: attr(data-text);
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #EDEDED 0%, #A1A1AA 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  opacity: 0.5;
-  animation: crt-jitter 0.5s steps(2) infinite;
+  color: transparent;
+  -webkit-text-stroke: 0.5px rgba(124, 58, 237, 0.3);
+  pointer-events: none;
+  animation: ghost-drift 6s ease-in-out infinite;
   z-index: -1;
 }
 
-@keyframes glitch-color-intense {
+@keyframes chromatic-breathe {
   0%, 100% {
     filter: 
-      drop-shadow(-2px 0 rgba(124, 58, 237, 0.8))
-      drop-shadow(2px 0 rgba(20, 184, 166, 0.8));
+      drop-shadow(0 0 0 transparent);
   }
   25% {
     filter: 
-      drop-shadow(2px 1px rgba(167, 139, 250, 0.7))
-      drop-shadow(-2px -1px rgba(45, 212, 191, 0.7));
+      drop-shadow(-1px 0 0 rgba(124, 58, 237, 0.35))
+      drop-shadow(1px 0 0 rgba(20, 184, 166, 0.35));
   }
   50% {
     filter: 
-      drop-shadow(-3px 0 rgba(139, 92, 246, 0.9))
-      drop-shadow(3px 0 rgba(94, 234, 212, 0.8));
+      drop-shadow(-2px 0 0 rgba(167, 139, 250, 0.25))
+      drop-shadow(2px 0 0 rgba(45, 212, 191, 0.25));
   }
   75% {
     filter: 
-      drop-shadow(1px 2px rgba(20, 184, 166, 0.8))
-      drop-shadow(-1px -2px rgba(124, 58, 237, 0.8));
+      drop-shadow(-1px 0 0 rgba(139, 92, 246, 0.3))
+      drop-shadow(1px 0 0 rgba(94, 234, 212, 0.3));
   }
 }
 
-/* Hover: Intense glitch - signal scramble */
-.glitch-text:hover {
-  animation: 
-    crt-jitter 0.1s steps(2) infinite,
-    crt-flicker 0.15s linear infinite,
-    glitch-color-intense 0.3s ease-in-out infinite;
+@keyframes ghost-drift {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.4;
+  }
+  33% {
+    transform: translate(-1px, 0);
+    opacity: 0.5;
+  }
+  66% {
+    transform: translate(1px, 0);
+    opacity: 0.35;
+  }
 }
 
-.glitch-text:hover::before {
-  opacity: 0.4;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 1px,
-    rgba(124, 58, 237, 0.02) 1px,
-    rgba(124, 58, 237, 0.02) 2px
-  );
-  animation: crt-scanline 0.5s linear infinite;
+@keyframes chromatic-intense {
+  0%, 100% {
+    filter: 
+      drop-shadow(-2px 0 0 rgba(124, 58, 237, 0.6))
+      drop-shadow(2px 0 0 rgba(20, 184, 166, 0.6));
+  }
+  25% {
+    filter: 
+      drop-shadow(2px 1px 0 rgba(167, 139, 250, 0.5))
+      drop-shadow(-2px -1px 0 rgba(45, 212, 191, 0.5));
+  }
+  50% {
+    filter: 
+      drop-shadow(-3px 0 0 rgba(139, 92, 246, 0.7))
+      drop-shadow(3px 0 0 rgba(94, 234, 212, 0.6));
+  }
+  75% {
+    filter: 
+      drop-shadow(1px 2px 0 rgba(20, 184, 166, 0.6))
+      drop-shadow(-1px -2px 0 rgba(124, 58, 237, 0.6));
+  }
+}
+
+/* Hover: Intensified chromatic effect */
+.glitch-text:hover {
+  animation: chromatic-intense 0.8s ease-in-out infinite;
 }
 
 .glitch-text:hover::after {
-  opacity: 0.6;
-  animation: crt-jitter 0.05s steps(3) infinite reverse, glitch-color-intense 0.2s ease-in-out infinite reverse;
+  -webkit-text-stroke: 1px rgba(124, 58, 237, 0.5);
+  animation: ghost-drift 1.5s ease-in-out infinite;
 }
 
