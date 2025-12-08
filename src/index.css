@@ -188,57 +188,61 @@
 .glitch-text {
   position: relative;
   display: inline-block;
-  /* Subtle chromatic shimmer - organic breathing motion */
-  animation: chromatic-breathe 4s ease-in-out infinite;
+  /* Persistent chromatic split - always visible digital artifact */
+  text-shadow: 
+    -2px 0 0 rgba(124, 58, 237, 0.7),
+    2px 0 0 rgba(20, 184, 166, 0.7);
+  animation: glitch-flicker 3s steps(2) infinite;
 }
 
-/* Chromatic ghost layer - no visible box */
-.glitch-text::after {
-  content: attr(data-text);
+/* Subtle scan line effect */
+.glitch-text::before {
+  content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  color: transparent;
-  -webkit-text-stroke: 0.5px rgba(124, 58, 237, 0.3);
+  left: -5%;
+  width: 110%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(124, 58, 237, 0.03) 2px,
+    rgba(124, 58, 237, 0.03) 4px
+  );
   pointer-events: none;
-  animation: ghost-drift 6s ease-in-out infinite;
-  z-index: -1;
+  animation: scanline-scroll 8s linear infinite;
 }
 
-@keyframes chromatic-breathe {
+@keyframes glitch-flicker {
   0%, 100% {
-    filter: 
-      drop-shadow(0 0 0 transparent);
+    text-shadow: 
+      -2px 0 0 rgba(124, 58, 237, 0.7),
+      2px 0 0 rgba(20, 184, 166, 0.7);
   }
   25% {
-    filter: 
-      drop-shadow(-1px 0 0 rgba(124, 58, 237, 0.35))
-      drop-shadow(1px 0 0 rgba(20, 184, 166, 0.35));
+    text-shadow: 
+      -2.5px 0 0 rgba(124, 58, 237, 0.8),
+      2px 0.5px 0 rgba(20, 184, 166, 0.6);
   }
   50% {
-    filter: 
-      drop-shadow(-2px 0 0 rgba(167, 139, 250, 0.25))
-      drop-shadow(2px 0 0 rgba(45, 212, 191, 0.25));
+    text-shadow: 
+      -1.5px -0.5px 0 rgba(124, 58, 237, 0.65),
+      2.5px 0 0 rgba(20, 184, 166, 0.75);
   }
   75% {
-    filter: 
-      drop-shadow(-1px 0 0 rgba(139, 92, 246, 0.3))
-      drop-shadow(1px 0 0 rgba(94, 234, 212, 0.3));
+    text-shadow: 
+      -2px 0.5px 0 rgba(124, 58, 237, 0.75),
+      1.5px 0 0 rgba(20, 184, 166, 0.7);
   }
 }
 
-@keyframes ghost-drift {
-  0%, 100% {
-    transform: translate(0, 0);
-    opacity: 0.4;
+@keyframes scanline-scroll {
+  0% {
+    transform: translateY(0);
   }
-  33% {
-    transform: translate(-1px, 0);
-    opacity: 0.5;
-  }
-  66% {
-    transform: translate(1px, 0);
-    opacity: 0.35;
+  100% {
+    transform: translateY(4px);
   }
 }
 
