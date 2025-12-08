@@ -188,69 +188,40 @@
 .glitch-text {
   position: relative;
   display: inline-block;
-  /* Default: Signal seeking - subtle offset pulse */
-  text-shadow: 
-    -1px 0 0 rgba(124, 58, 237, 0.5),
-    1px 0 0 rgba(20, 184, 166, 0.5),
-    0 0 8px rgba(124, 58, 237, 0.15);
-  animation: signal-seek 2.5s ease-in-out infinite;
 }
 
-/* Faint noise texture overlay */
-.glitch-text::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.04;
-  pointer-events: none;
-  mix-blend-mode: overlay;
+/* Letter stagger float - organic breathing wave */
+.float-letter {
+  display: inline-block;
+  background: linear-gradient(135deg, #EDEDED 0%, #A1A1AA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: letter-float 2.8s ease-in-out infinite;
 }
 
-/* Ghost echo layer */
+@keyframes letter-float {
+  0%, 100% {
+    transform: translateY(0);
+    filter: 
+      drop-shadow(-1px 0 rgba(124, 58, 237, 0.3))
+      drop-shadow(1px 0 rgba(20, 184, 166, 0.3));
+  }
+  50% {
+    transform: translateY(-6px);
+    filter: 
+      drop-shadow(-2px 0 rgba(124, 58, 237, 0.5))
+      drop-shadow(2px 0 rgba(20, 184, 166, 0.5))
+      drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  }
+}
+
+/* No pseudo-elements on default - clean text */
+.glitch-text::before,
 .glitch-text::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: transparent;
-  -webkit-text-stroke: 0.5px rgba(20, 184, 166, 0.25);
-  pointer-events: none;
-  animation: echo-drift 4s ease-in-out infinite;
-  z-index: -1;
+  content: none;
 }
 
-/* Default: Gentle signal lock animation */
-@keyframes signal-seek {
-  0%, 100% {
-    text-shadow: 
-      -1px 0 0 rgba(124, 58, 237, 0.5),
-      1px 0 0 rgba(20, 184, 166, 0.5),
-      0 0 8px rgba(124, 58, 237, 0.15);
-  }
-  50% {
-    text-shadow: 
-      -1.5px 0 0 rgba(124, 58, 237, 0.6),
-      1.5px 0 0 rgba(20, 184, 166, 0.6),
-      0 0 12px rgba(20, 184, 166, 0.2);
-  }
-}
-
-@keyframes echo-drift {
-  0%, 100% {
-    transform: translate(0, 0);
-    opacity: 0.3;
-  }
-  50% {
-    transform: translate(2px, 0);
-    opacity: 0.5;
-  }
-}
-
-/* Hover: ORIGINAL fast color scramble - restored */
 @keyframes glitch-color-intense {
   0%, 100% {
     filter: 
@@ -274,32 +245,45 @@
   }
 }
 
-@keyframes crt-jitter {
-  0%, 100% { transform: translate(0, 0); }
-  10% { transform: translate(-1px, 0); }
-  20% { transform: translate(1px, 1px); }
-  30% { transform: translate(0, -1px); }
-  40% { transform: translate(1px, 0); }
-  50% { transform: translate(-1px, 1px); }
-  60% { transform: translate(1px, -1px); }
-  70% { transform: translate(0, 1px); }
-  80% { transform: translate(-1px, 0); }
-  90% { transform: translate(1px, 0); }
-}
-
-/* Hover: Intense glitch - fast color scramble */
+/* Hover: Intense glitch - signal scramble */
 .glitch-text:hover {
   animation: 
     crt-jitter 0.1s steps(2) infinite,
+    crt-flicker 0.15s linear infinite,
     glitch-color-intense 0.3s ease-in-out infinite;
 }
 
+/* Disable float on hover - pure glitch mode */
+.glitch-text:hover .float-letter {
+  animation: none;
+  transform: none;
+  filter: none;
+}
+
 .glitch-text:hover::before {
-  opacity: 0.15;
+  content: '';
+  opacity: 0.5;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    rgba(124, 58, 237, 0.05) 1px,
+    rgba(124, 58, 237, 0.05) 2px
+  );
+  animation: crt-scanline 0.5s linear infinite;
 }
 
 .glitch-text:hover::after {
-  -webkit-text-stroke: 1px rgba(124, 58, 237, 0.6);
-  animation: crt-jitter 0.05s steps(3) infinite reverse;
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.6) 0%, rgba(20, 184, 166, 0.6) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: crt-jitter 0.05s steps(3) infinite reverse, glitch-color-intense 0.2s ease-in-out infinite reverse;
+  z-index: -1;
 }
 

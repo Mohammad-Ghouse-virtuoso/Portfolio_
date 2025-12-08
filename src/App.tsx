@@ -19,10 +19,15 @@ const SectionLoader = () => (
 function App() {
   // Ensure page starts at top on refresh
   useEffect(() => {
+    // Immediate scroll
     window.scrollTo(0, 0);
+    // Disable browser scroll restoration
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
+    // Fallback scroll after any lazy content loads
+    const timeout = setTimeout(() => window.scrollTo(0, 0), 100);
+    return () => clearTimeout(timeout);
   }, []);
   return (
     <main className="min-h-screen w-full selection:bg-accent-violet/30 selection:text-accent-violet relative bg-background text-text-primary overflow-x-hidden">

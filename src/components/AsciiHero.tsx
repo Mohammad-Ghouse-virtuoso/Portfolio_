@@ -36,7 +36,17 @@ const AsciiHero = () => {
             className="text-5xl md:text-7xl lg:text-8xl tracking-tight mb-8"
           >
             <span className="font-mono text-accent-teal text-2xl md:text-3xl lg:text-4xl block mb-3 tracking-wide">Hej! I'm</span>
-            <span className="font-bold text-gradient-glow">Mohammad <span className="glitch-text" data-text="Ghouse">Ghouse</span>!</span>
+            <span className="font-bold text-gradient-glow">Mohammad{' '}
+              <span className="glitch-text" data-text="Ghouse!">
+                <span className="float-letter" style={{ animationDelay: '0s' }}>G</span>
+                <span className="float-letter" style={{ animationDelay: '0.2s' }}>h</span>
+                <span className="float-letter" style={{ animationDelay: '0.4s' }}>o</span>
+                <span className="float-letter" style={{ animationDelay: '0.6s' }}>u</span>
+                <span className="float-letter" style={{ animationDelay: '0.8s' }}>s</span>
+                <span className="float-letter" style={{ animationDelay: '1.0s' }}>e</span>
+                <span className="float-letter" style={{ animationDelay: '1.2s' }}>!</span>
+              </span>
+            </span>
           </motion.h1>
           
           <div className="flex flex-col items-center gap-4 font-mono text-sm text-text-muted">
