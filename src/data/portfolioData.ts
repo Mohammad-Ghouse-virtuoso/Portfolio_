@@ -55,7 +55,7 @@ export const projects: Project[] = [
     ],
     tech: ["React 18", "Vite", "TailwindCSS", "FastAPI", "SQLModel", "JWT", "SQLite", "Docker", "Vitest", "Pytest"],
     ascii: "{...}",
-    impact: "Reliable planning for everything from small gatherings to larger community events: clear headcounts, fewer no-shows via QR check-ins, and streamlined coordination so hosts spend more time on the experience and less on logistics.",
+    impact: "Clear headcounts, fewer no-shows via QR check-ins, and streamlined coordination from birthdays to 200-guest events.",
     className: "md:col-span-1 md:row-span-1",
     sourceUrl: "https://github.com/Mohammad-Ghouse-virtuoso/EventiFy",
     comingSoon: true
