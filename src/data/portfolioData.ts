@@ -44,18 +44,18 @@ export const projects: Project[] = [
   {
     title: "EventiFy",
     desc: "Real-time event management platform.",
-    overview: "A comprehensive event orchestration platform designed for large-scale virtual and hybrid conferences. It handles ticketing, live streaming, and attendee engagement in real-time.",
-    problem: "Existing solutions were either too expensive or lacked the scalability to handle sudden spikes in traffic during keynote sessions. Organizers needed a reliable way to manage 10k+ concurrent users without downtime.",
-    solution: "Architected a serverless backend using Supabase to handle real-time subscriptions for chat and polls. Implemented edge caching strategies and optimistic UI updates to ensure a lag-free experience for global attendees.",
+    overview: "A social-first event hub that keeps discovery, RSVPs, and approvals in one flow. You see events around you—and from your contacts—so relevance stays high.",
+    problem: "Finding and organizing events with people you actually know is messy. You bounce between WhatsApp threads, scattered links, and social feeds that drown you in irrelevant listings. Hosts can't see who's really attending, can't gate RSVPs for headcount or safety, and struggle to coordinate details for everything from a birthday dinner to a 200-guest wedding. Guests get lost in fragmented updates, while organizers waste time chasing confirmations instead of planning. There's no single place to discover trusted events near you—shared by friends, family, and close contacts—while also handling approvals, reminders, and check-ins. The result: poor turnout, over/under-catering, and stressed hosts.",
+    solution: "EventiFy is a social-first event hub that keeps discovery, RSVPs, and approvals in one flow. You see events around you—and from your contacts—so relevance stays high. Hosts can require RSVP approval to control capacity, capture preferences (e.g., \"veg/non-veg\", \"bringing a plus-one\"), and keep a live headcount. Guests confirm in one tap, get updates, and check in with secure QR codes. Evergreen events viz., intimate birthdays to weddings, karaoke nights, and music fests, organizers get clear attendance signals, streamlined planning, and a calmer path to a great event—all under the organizer's approval and oversight.",
     features: [
-      "Real-time Chat & Q&A (WebSockets)",
-      "Dynamic Seat Reservation System",
-      "Live Stream Integration (HLS/RTMP)",
-      "Role-based Access Control (RBAC)"
+      "Event discovery and RSVP with attendee/organizer/admin roles",
+      "Secure QR-based check-in: generate ticket, scan, and record attendance with live stats",
+      "Organizer controls: create/manage events, view RSVPs, monitor check-ins",
+      "Mobile-first UI with fast React + FastAPI stack for responsive browsing and actions"
     ],
-    tech: ["Next.js", "Supabase", "WebSockets", "Redis", "Vercel Edge"],
+    tech: ["React 18", "Vite", "TailwindCSS", "FastAPI", "SQLModel", "JWT", "SQLite", "Docker", "Vitest", "Pytest"],
     ascii: "{...}",
-    impact: "Successfully hosted 5 major conferences with zero downtime, scaling to support 10k+ concurrent users.",
+    impact: "Reliable planning for everything from small gatherings to larger community events: clear headcounts, fewer no-shows via QR check-ins, and streamlined coordination so hosts spend more time on the experience and less on logistics.",
     className: "md:col-span-1 md:row-span-1",
     sourceUrl: "https://github.com/Mohammad-Ghouse-virtuoso/EventiFy",
     comingSoon: true
