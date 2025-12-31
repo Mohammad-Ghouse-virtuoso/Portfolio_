@@ -58,8 +58,7 @@ export const projects: Project[] = [
     impact: "Clear headcounts, fewer no-shows via QR check-ins, and streamlined coordination from birthdays to 200-guest events.",
     className: "md:col-span-1 md:row-span-1",
     sourceUrl: "https://github.com/Mohammad-Ghouse-virtuoso/EventiFy",
-    liveUrl: "https://eventify.mohammad-ghouse.site/",
-    comingSoon: true
+    liveUrl: "https://eventify.mohammad-ghouse.site/"
   },
   {
     title: "CRNN",
