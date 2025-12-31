@@ -1,4 +1,5 @@
 import { useEffect, lazy, Suspense } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import AsciiHero from './components/AsciiHero';
 import QuoteTicker from './components/QuoteTicker';
 import SocialDock from './components/SocialDock';
@@ -98,6 +99,7 @@ function App() {
         </div>
       </footer>
     </main>
+    <Analytics />
   );
 }
 
