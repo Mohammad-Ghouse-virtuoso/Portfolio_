@@ -31,7 +31,8 @@ function App() {
     return () => clearTimeout(timeout);
   }, []);
   return (
-    <main className="min-h-screen w-full selection:bg-accent-violet/30 selection:text-accent-violet relative bg-background text-text-primary overflow-x-hidden">
+    <>
+      <main className="min-h-screen w-full selection:bg-accent-violet/30 selection:text-accent-violet relative bg-background text-text-primary overflow-x-hidden">
       <AsciiHero />
       <QuoteTicker />
       <Suspense fallback={<SectionLoader />}>
@@ -100,6 +101,7 @@ function App() {
       </footer>
     </main>
     <Analytics />
+    </>
   );
 }
 
