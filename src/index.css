@@ -11,6 +11,15 @@
   --color-text-muted: #A1A1AA; /* Ash */
   --color-accent-glow: #7C3AED; /* Cyber Violet */
   --color-accent-teal: #14B8A6; /* Electric Teal */
+  
+  /* GitHub Authentic Colors */
+  --color-github-0: #161B22; /* No contributions */
+  --color-github-1: #0E4429; /* Low contributions */
+  --color-github-2: #006D32; /* Medium-low contributions */
+  --color-github-3: #26A641; /* Medium-high contributions */
+  --color-github-4: #39D353; /* High contributions */
+  --color-github-text: #7D8590; /* GitHub gray text */
+  --color-github-border: #30363D; /* GitHub border */
 }
 
 @layer base {

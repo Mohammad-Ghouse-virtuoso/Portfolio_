@@ -6,7 +6,9 @@ import SocialDock from './components/SocialDock';
 
 // Lazy load below-fold components for faster initial load
 const AboutTerminal = lazy(() => import('./components/AboutTerminal'));
+const GitHubProfileSection = lazy(() => import('./components/GitHubProfileSection'));
 const ProjectSection = lazy(() => import('./components/ProjectSection'));
+const DynamicsSection = lazy(() => import('./components/DynamicsSection'));
 const InspirationSection = lazy(() => import('./components/InspirationSection'));
 const ContactForm = lazy(() => import('./components/ContactForm'));
 
@@ -39,7 +41,13 @@ function App() {
         <AboutTerminal />
       </Suspense>
       <Suspense fallback={<SectionLoader />}>
+        <GitHubProfileSection />
+      </Suspense>
+      <Suspense fallback={<SectionLoader />}>
         <ProjectSection />
+      </Suspense>
+      <Suspense fallback={<SectionLoader />}>
+        <DynamicsSection />
       </Suspense>
       <Suspense fallback={<SectionLoader />}>
         <InspirationSection />
