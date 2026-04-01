@@ -101,10 +101,10 @@ export const inspirations: Inspiration[] = [
     quote: "Man is the only creature who refuses to be what he is."
   },
   {
-    name: "Elon Musk",
-    role: "Engineer & Visionary",
-    image: "/assets/Elon_musk.jpg",
-    quote: "I think it's possible for ordinary people to be extraordinary."
+    name: "Steve Jobs",
+    role: "Apple Co-founder",
+    image: "/assets/Steve Jobs.jpg",
+    quote: "The people who are crazy enough to think they can change the world are the ones who do."
   },
   // BOOKS (4)
   {
