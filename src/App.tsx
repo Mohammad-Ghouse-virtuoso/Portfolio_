@@ -1,5 +1,6 @@
 import { useEffect, lazy, Suspense } from 'react';
 import { Analytics } from '@vercel/analytics/react';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import AsciiHero from './components/AsciiHero';
 import QuoteTicker from './components/QuoteTicker';
 import SocialDock from './components/SocialDock';
@@ -20,6 +21,9 @@ const SectionLoader = () => (
 );
 
 function App() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, { stiffness: 200, damping: 30 });
+
   // Ensure page starts at top on refresh
   useEffect(() => {
     // Immediate scroll
@@ -34,6 +38,11 @@ function App() {
   }, []);
   return (
     <>
+      {/* Scroll progress bar — fixed 1px line at the very top */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-[2px] z-[200] origin-left bg-accent-indigo"
+        style={{ scaleX }}
+      />
       <ShimmerStars count={60} />
       <main className="min-h-screen w-full selection:bg-accent-violet/30 selection:text-accent-violet relative z-10 text-text-primary overflow-x-hidden">
       <AsciiHero />

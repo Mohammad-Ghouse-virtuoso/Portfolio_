@@ -11,16 +11,28 @@ const ProjectSection = () => {
 
   return (
     <section id="projects" className="py-24 px-4 md:px-8 max-w-6xl mx-auto">
-      <div className="flex items-end justify-between mb-12">
+      <motion.div
+        className="flex items-end justify-between mb-12"
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.55, ease: 'easeOut' }}
+      >
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">Selected Works</h2>
         <span className="font-mono text-xs text-text-muted hidden md:block">01 — 03</span>
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[minmax(200px,auto)]">
         {projects.map((project, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.1 }}
+          >
           <SpotlightCard 
-            key={index} 
-            className={`p-8 cursor-pointer group ${project.className}`}
+            className={`p-8 cursor-pointer group h-full ${project.className}`}
             onClick={() => setSelectedProject(project)}
           >
             <div className="h-full flex flex-col justify-between">
@@ -81,6 +93,7 @@ const ProjectSection = () => {
               </div>
             </div>
           </SpotlightCard>
+          </motion.div>
         ))}
       </div>
 

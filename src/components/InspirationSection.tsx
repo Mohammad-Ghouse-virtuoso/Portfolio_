@@ -13,7 +13,13 @@ const InspirationSection = () => {
 
   return (
     <section className="py-32 px-4 md:px-8 max-w-7xl mx-auto">
-      <div className="flex flex-col items-center mb-16">
+      <motion.div
+        className="flex flex-col items-center mb-16"
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.55, ease: 'easeOut' }}
+      >
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-8 text-center">
           <span className="text-text-muted mr-4 font-mono text-sm">04</span>
           Inspiration
@@ -39,7 +45,7 @@ const InspirationSection = () => {
             Library
           </button>
         </div>
-      </div>
+      </motion.div>
 
       <motion.div 
         layout
