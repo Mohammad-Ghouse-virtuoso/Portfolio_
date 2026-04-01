@@ -48,7 +48,7 @@
   --color-text: #EDEDED; /* Starlight */
   --color-text-muted: #A1A1AA; /* Ash */
   --color-accent-glow: #7C3AED; /* Cyber Violet */
-  --color-accent-teal: #14B8A6; /* Electric Teal */
+  --color-accent-indigo: #818CF8; /* Soft Indigo */
 }
 
 @layer base {

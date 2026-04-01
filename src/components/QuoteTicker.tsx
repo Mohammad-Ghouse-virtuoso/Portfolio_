@@ -68,7 +68,7 @@ const QuoteTicker = () => {
                 transition={{ delay: 0.2, duration: 0.4 }}
                 className="mb-6"
               >
-                <span className="inline-block px-3 py-1 text-[10px] font-mono tracking-widest uppercase text-accent-teal border border-accent-teal/20 rounded-full bg-accent-teal/5">
+                <span className="inline-block px-3 py-1 text-[10px] font-mono tracking-widest uppercase text-accent-indigo border border-accent-indigo/20 rounded-full bg-accent-indigo/5">
                   {quotes[currentIndex].category}
                 </span>
               </motion.div>
@@ -111,7 +111,7 @@ const QuoteTicker = () => {
               <span
                 className={`block h-1.5 rounded-full transition-all duration-500 ${
                   i === currentIndex
-                    ? 'w-8 bg-gradient-to-r from-accent-glow to-accent-teal'
+                    ? 'w-8 bg-gradient-to-r from-accent-glow to-accent-indigo'
                     : 'w-1.5 bg-white/15 group-hover:bg-white/30'
                 }`}
               />

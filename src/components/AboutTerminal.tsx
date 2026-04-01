@@ -89,14 +89,14 @@ const AboutTerminal = () => {
     <div className="text-text-muted">
       <p className="text-accent-glow mb-2">Available commands:</p>
       <div className="grid grid-cols-2 gap-x-8 gap-y-1">
-        <span><span className="text-accent-teal">ls</span> - list files</span>
-        <span><span className="text-accent-teal">cd</span> [dir] - change directory</span>
-        <span><span className="text-accent-teal">cat</span> [file] - read file</span>
-        <span><span className="text-accent-teal">pwd</span> - print working directory</span>
-        <span><span className="text-accent-teal">clear</span> - clear terminal</span>
-        <span><span className="text-accent-teal">whoami</span> - current user</span>
-        <span><span className="text-accent-teal">date</span> - current date</span>
-        <span><span className="text-accent-teal">help</span> - show this message</span>
+        <span><span className="text-accent-indigo">ls</span> - list files</span>
+        <span><span className="text-accent-indigo">cd</span> [dir] - change directory</span>
+        <span><span className="text-accent-indigo">cat</span> [file] - read file</span>
+        <span><span className="text-accent-indigo">pwd</span> - print working directory</span>
+        <span><span className="text-accent-indigo">clear</span> - clear terminal</span>
+        <span><span className="text-accent-indigo">whoami</span> - current user</span>
+        <span><span className="text-accent-indigo">date</span> - current date</span>
+        <span><span className="text-accent-indigo">help</span> - show this message</span>
       </div>
     </div>
   );
@@ -132,7 +132,7 @@ const AboutTerminal = () => {
       case 'pwd':
         return (
           <div>
-            <span className="text-accent-teal">{currentPath}</span>
+            <span className="text-accent-indigo">{currentPath}</span>
             <span className="text-text-muted ml-2">// you're exactly where you need to be ✨</span>
           </div>
         );
@@ -171,7 +171,7 @@ const AboutTerminal = () => {
         return '👋 Thanks for exploring! Refresh to restart.';
       case 'neofetch':
         return (
-          <div className="text-accent-teal">
+          <div className="text-accent-indigo">
             <pre className="text-xs leading-tight">{`
    ╭─────────────────────╮
    │  Mohammad Ghouse    │
@@ -261,7 +261,7 @@ const AboutTerminal = () => {
 
           {/* Center Title */}
           <div className="flex-1 flex justify-center items-center gap-2">
-            <Terminal size={14} className="text-accent-teal" />
+            <Terminal size={14} className="text-accent-indigo" />
             <span className="font-sans text-sm text-white/90 font-medium">portfolio</span>
           </div>
 
@@ -279,7 +279,7 @@ const AboutTerminal = () => {
           {history.map((item, i) => (
             <div key={i} className="mb-4">
               <div className="flex items-center gap-2">
-                <span className="text-accent-teal">➜</span> 
+                <span className="text-accent-indigo">➜</span> 
                 <span className="text-accent-glow">{currentPath === '~' ? '~' : currentPath.split('/').pop()}</span>
                 <span className="text-text">{item.command}</span>
               </div>
@@ -297,7 +297,7 @@ const AboutTerminal = () => {
           ))}
 
           <div className="flex items-center gap-2">
-            <span className="text-accent-teal">➜</span> 
+            <span className="text-accent-indigo">➜</span> 
             <span className="text-accent-glow">{currentPath === '~' ? '~' : currentPath.split('/').pop()}</span>
             <input
               ref={inputRef}

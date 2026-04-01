@@ -14,15 +14,17 @@ const ShimmerStars = ({ count = 50 }: { count?: number }) => {
     return Array.from({ length: count }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
+      // Full viewport — fixed position keeps them visible on every section
       y: Math.random() * 100,
-      size: Math.random() * 2 + 1,
+      // Smaller, more distant: 0.8–1.8 px
+      size: Math.random() * 1 + 0.8,
       duration: Math.random() * 3 + 2,
       delay: Math.random() * 5,
     }));
   }, [count]);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-[1]">
+    <div className="fixed inset-0 pointer-events-none z-[2]">
       {stars.map((star) => (
         <div
           key={star.id}
@@ -32,7 +34,8 @@ const ShimmerStars = ({ count = 50 }: { count?: number }) => {
             top: `${star.y}%`,
             width: star.size,
             height: star.size,
-            opacity: 0.5,
+            // Slightly more visible site-wide
+            opacity: 0.45,
             animation: `star-shimmer ${star.duration}s ease-in-out infinite`,
             animationDelay: `${star.delay}s`,
           }}

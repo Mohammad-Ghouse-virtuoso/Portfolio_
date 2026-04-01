@@ -4,6 +4,7 @@ import SpotlightCard from './SpotlightCard';
 import ProjectModal from './ProjectModal';
 import { ArrowUpRight } from 'lucide-react';
 import { projects } from '../data/portfolioData';
+import TechIcon from './TechIcon';
 
 const ProjectSection = () => {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
@@ -25,7 +26,7 @@ const ProjectSection = () => {
             <div className="h-full flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="font-mono text-accent-teal text-xl">{project.ascii}</div>
+                  <div className="font-mono text-accent-indigo text-xl">{project.ascii}</div>
                   {project.comingSoon && (
                     <span className="relative inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-mono uppercase tracking-[0.15em] rounded-full overflow-hidden group/badge">
                       {/* Animated gradient border */}
@@ -62,7 +63,7 @@ const ProjectSection = () => {
                       </div>
                     ))}
                     {project.impact && (
-                      <p className="mt-4 text-xs text-accent-teal/80 font-mono">
+                      <p className="mt-4 text-xs text-accent-indigo/80 font-mono">
                         ↗ {project.impact.split('.')[0]}.
                       </p>
                     )}
@@ -71,14 +72,12 @@ const ProjectSection = () => {
               </div>
 
               <div className="flex items-end justify-between mt-8">
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 items-center">
                   {project.tech.map((t) => (
-                    <span key={t} className="text-[10px] font-mono uppercase tracking-wider border border-border px-2 py-1 rounded text-text-muted">
-                      {t}
-                    </span>
+                    <TechIcon key={t} name={t} size="sm" />
                   ))}
                 </div>
-                <ArrowUpRight className="text-accent-teal opacity-0 group-hover:opacity-100 transition-opacity" />
+                <ArrowUpRight className="text-accent-indigo opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
             </div>
           </SpotlightCard>

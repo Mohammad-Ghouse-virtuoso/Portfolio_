@@ -134,7 +134,7 @@ const ContactForm = () => {
             className={`
               group relative px-8 py-3 rounded-lg font-mono text-sm overflow-hidden transition-all duration-300
               ${status === 'success' 
-                ? 'bg-accent-teal/20 text-accent-teal border border-accent-teal/50' 
+                ? 'bg-accent-indigo/20 text-accent-indigo border border-accent-indigo/50' 
                 : 'bg-white text-black hover:bg-gray-200 border border-transparent'}
             `}
           >

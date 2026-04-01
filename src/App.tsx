@@ -4,6 +4,7 @@ import AsciiHero from './components/AsciiHero';
 import QuoteTicker from './components/QuoteTicker';
 import SocialDock from './components/SocialDock';
 import ShimmerStars from './components/ShimmerStars';
+import TechIcon from './components/TechIcon';
 
 // Lazy load below-fold components for faster initial load
 const AboutTerminal = lazy(() => import('./components/AboutTerminal'));
@@ -14,7 +15,7 @@ const ContactForm = lazy(() => import('./components/ContactForm'));
 // Minimal loading placeholder that doesn't cause layout shift
 const SectionLoader = () => (
   <div className="min-h-[400px] flex items-center justify-center">
-    <div className="w-6 h-6 border-2 border-accent-teal/30 border-t-accent-teal rounded-full animate-spin" />
+    <div className="w-6 h-6 border-2 border-accent-indigo/30 border-t-accent-indigo rounded-full animate-spin" />
   </div>
 );
 
@@ -34,7 +35,7 @@ function App() {
   return (
     <>
       <ShimmerStars count={60} />
-      <main className="min-h-screen w-full selection:bg-accent-violet/30 selection:text-accent-violet relative z-10 bg-background text-text-primary overflow-x-hidden">
+      <main className="min-h-screen w-full selection:bg-accent-violet/30 selection:text-accent-violet relative z-10 text-text-primary overflow-x-hidden">
       <AsciiHero />
       <QuoteTicker />
       <Suspense fallback={<SectionLoader />}>
@@ -60,7 +61,7 @@ function App() {
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Left - Brand */}
           <div className="text-center md:text-left">
-            <h3 className="font-mono text-sm text-accent-teal mb-2">~/mohammad-ghouse</h3>
+            <h3 className="font-mono text-sm text-accent-indigo mb-2">~/mohammad-ghouse</h3>
             <p className="text-xs text-text-muted leading-relaxed">
               "One must imagine Sisyphus happy."<br />— Hyderabad, India 🇮🇳
             </p>
@@ -78,11 +79,10 @@ function App() {
           {/* Right - Built With */}
           <div className="text-center md:text-right">
             <h3 className="font-mono text-xs text-text-muted/50 uppercase tracking-wider mb-3">Built With</h3>
-            <div className="flex flex-wrap justify-center md:justify-end gap-2">
-              <span className="px-2 py-0.5 text-[10px] font-mono bg-surface border border-border rounded">React</span>
-              <span className="px-2 py-0.5 text-[10px] font-mono bg-surface border border-border rounded">Vite</span>
-              <span className="px-2 py-0.5 text-[10px] font-mono bg-surface border border-border rounded">Tailwind</span>
-              <span className="px-2 py-0.5 text-[10px] font-mono bg-surface border border-border rounded">Framer</span>
+            <div className="flex flex-wrap justify-center md:justify-end gap-2 items-center">
+              {['React', 'Vite', 'Tailwind', 'Framer'].map((t) => (
+                <TechIcon key={t} name={t} size="sm" showFallback={false} />
+              ))}
             </div>
           </div>
         </div>

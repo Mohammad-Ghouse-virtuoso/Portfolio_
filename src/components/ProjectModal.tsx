@@ -1,39 +1,12 @@
 import { motion } from 'framer-motion';
 import { X, ExternalLink, Github } from 'lucide-react';
 import { useEffect } from 'react';
+import TechIcon from './TechIcon';
 
 interface ProjectModalProps {
   project: any;
   onClose: () => void;
 }
-
-const techColors: Record<string, string> = {
-  "React": "bg-blue-100 text-blue-800 border-blue-200",
-  "React 18": "bg-blue-100 text-blue-800 border-blue-200",
-  "Three.js": "bg-gray-100 text-gray-800 border-gray-200",
-  "Stripe": "bg-indigo-100 text-indigo-800 border-indigo-200",
-  "Tailwind": "bg-cyan-100 text-cyan-800 border-cyan-200",
-  "TailwindCSS": "bg-cyan-100 text-cyan-800 border-cyan-200",
-  "Zustand": "bg-yellow-100 text-yellow-800 border-yellow-200",
-  "Vite": "bg-purple-100 text-purple-800 border-purple-200",
-  "FastAPI": "bg-teal-100 text-teal-800 border-teal-200",
-  "SQLModel": "bg-red-100 text-red-800 border-red-200",
-  "JWT": "bg-pink-100 text-pink-800 border-pink-200",
-  "SQLite": "bg-blue-50 text-blue-700 border-blue-200",
-  "Docker": "bg-sky-100 text-sky-800 border-sky-200",
-  "Vitest": "bg-green-100 text-green-800 border-green-200",
-  "Pytest": "bg-blue-100 text-blue-700 border-blue-200",
-  "Next.js": "bg-black text-white border-gray-800",
-  "Supabase": "bg-emerald-100 text-emerald-800 border-emerald-200",
-  "WebSockets": "bg-purple-100 text-purple-800 border-purple-200",
-  "Redis": "bg-red-100 text-red-800 border-red-200",
-  "Vercel Edge": "bg-gray-900 text-white border-gray-700",
-  "Python": "bg-blue-50 text-blue-900 border-blue-200",
-  "D3.js": "bg-orange-100 text-orange-800 border-orange-200",
-  "TensorFlow": "bg-orange-50 text-orange-700 border-orange-200",
-  "Flask": "bg-gray-100 text-gray-800 border-gray-300",
-  "NumPy": "bg-blue-100 text-blue-700 border-blue-200",
-};
 
 const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
   useEffect(() => {
@@ -136,11 +109,9 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
               </div>
               <div>
                 <h4 className="font-mono text-xs uppercase tracking-widest text-text-muted mb-4">Stack</h4>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 items-center">
                   {project.tech.map((t: string) => (
-                    <span key={t} className={`text-xs font-mono border px-3 py-1 rounded-full ${techColors[t] || "bg-white/10 text-gray-300 border-white/10"}`}>
-                      {t}
-                    </span>
+                    <TechIcon key={t} name={t} size="md" />
                   ))}
                 </div>
               </div>

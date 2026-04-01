@@ -12,7 +12,7 @@ const SocialItem = ({ icon: Icon, href }: { icon: any, href: string }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="relative flex items-center justify-center w-12 h-12 rounded-full bg-surface border border-border text-text-muted hover:text-accent-teal hover:border-accent-teal/50 transition-all duration-300"
+      className="relative flex items-center justify-center w-12 h-12 rounded-full bg-surface border border-border text-text-muted hover:text-accent-indigo hover:border-accent-indigo/50 transition-all duration-300"
       animate={{ x, y }}
       onMouseMove={handleMouse}
       onMouseLeave={reset}
