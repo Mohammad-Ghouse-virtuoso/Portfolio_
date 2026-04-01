@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/react';
 import AsciiHero from './components/AsciiHero';
 import QuoteTicker from './components/QuoteTicker';
 import SocialDock from './components/SocialDock';
+import ShimmerStars from './components/ShimmerStars';
 
 // Lazy load below-fold components for faster initial load
 const AboutTerminal = lazy(() => import('./components/AboutTerminal'));
@@ -32,7 +33,8 @@ function App() {
   }, []);
   return (
     <>
-      <main className="min-h-screen w-full selection:bg-accent-violet/30 selection:text-accent-violet relative bg-background text-text-primary overflow-x-hidden">
+      <ShimmerStars count={60} />
+      <main className="min-h-screen w-full selection:bg-accent-violet/30 selection:text-accent-violet relative z-10 bg-background text-text-primary overflow-x-hidden">
       <AsciiHero />
       <QuoteTicker />
       <Suspense fallback={<SectionLoader />}>
@@ -48,7 +50,7 @@ function App() {
         <ContactForm />
       </Suspense>
       <SocialDock />
-      
+
       <footer className="pt-16 pb-32 px-4 md:px-8 border-t border-white/5 mt-20">
         {/* ASCII Divider */}
         <div className="max-w-4xl mx-auto mb-12 font-mono text-[10px] text-text-muted/30 text-center overflow-hidden whitespace-nowrap">
