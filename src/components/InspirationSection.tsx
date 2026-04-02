@@ -80,7 +80,7 @@ const InspirationSection = () => {
                   <div className="text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     <h3 className="font-bold text-lg mb-1">{item.name}</h3>
                     <p className="font-mono text-[10px] uppercase tracking-widest text-accent-indigo mb-3">{item.role}</p>
-                    <p className="text-sm text-text-muted opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 leading-relaxed line-clamp-3">
+                    <p className="text-xs sm:text-sm text-text-muted opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 leading-relaxed max-h-28 sm:max-h-none overflow-y-auto sm:overflow-visible pr-1">
                       "{item.quote}"
                     </p>
                   </div>
