@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import SpotlightCard from './SpotlightCard';
 import ProjectModal from './ProjectModal';
 import { ArrowUpRight } from 'lucide-react';
