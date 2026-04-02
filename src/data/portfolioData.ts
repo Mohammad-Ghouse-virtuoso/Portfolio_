@@ -43,38 +43,38 @@ export const projects: Project[] = [
   },
   {
     title: "EventiFy",
-    desc: "Real-time event management platform.",
-    overview: "A social-first event hub that keeps discovery, RSVPs, and approvals in one flow. You see events around you—and from your contacts—so relevance stays high.",
+    desc: "Full-stack real-time event management platform for seamless coordination.",
+    overview: "A full-stack real-time event platform that unifies planning, scheduling, attendee tracking, and check-ins into a single workflow for organizers and guests.",
     problem: "Event coordination with your network is fragmented across WhatsApp threads and social feeds. Hosts can't control RSVPs or track headcounts, guests miss updates, and organizers waste time chasing confirmations—resulting in poor turnout and planning chaos.",
-    solution: "EventiFy unifies discovery, RSVPs, and approvals in one platform. Hosts gate attendance, capture preferences (veg/non-veg, plus-ones), and track live headcounts. Guests confirm in one tap and check in with QR codes—keeping everyone aligned from birthdays to 200-guest weddings.",
+    solution: "Built a responsive React frontend with dynamic updates for event creation, scheduling, and attendee tracking, backed by scalable APIs for event and user management. Added secure authentication with role-based access control and optimized request handling to support concurrent real-time usage.",
     features: [
-      "Event discovery and RSVP with attendee/organizer/admin roles",
-      "Secure QR-based check-in: generate ticket, scan, and record attendance with live stats",
-      "Organizer controls: create/manage events, view RSVPs, monitor check-ins",
-      "Mobile-first UI with fast React + FastAPI stack for responsive browsing and actions"
+      "Responsive UI with dynamic updates for event creation, scheduling, and attendee tracking",
+      "Scalable backend APIs for efficient event and user lifecycle management",
+      "Secure authentication and role-based access control for attendee/organizer/admin roles",
+      "Performance-tuned architecture for concurrent users and high-volume real-time workloads"
     ],
     tech: ["React 18", "Vite", "TailwindCSS", "FastAPI", "SQLModel", "JWT", "SQLite", "Docker", "Vitest", "Pytest"],
     ascii: "{...}",
-    impact: "Clear headcounts, fewer no-shows via QR check-ins, and streamlined coordination from birthdays to 200-guest events.",
+    impact: "Engineered for high-volume usage with smooth real-time performance under concurrent user load.",
     className: "md:col-span-1 md:row-span-1",
     sourceUrl: "https://github.com/Mohammad-Ghouse-virtuoso/EventiFy",
     liveUrl: "https://eventify.mohammad-ghouse.site/"
   },
   {
     title: "CRNN",
-    desc: "Neural network visualizer.",
-    overview: "An educational tool designed to demystify Convolutional Recurrent Neural Networks (CRNNs) for students and researchers. It provides an interactive, layer-by-layer breakdown of data flow.",
+    desc: "End-to-end handwritten text recognition with CRNN + CTC.",
+    overview: "An end-to-end handwriting recognition system built with a CRNN pipeline (CNN + RNN + CTC), designed for robust sequence decoding across diverse writing styles.",
     problem: "Neural network architectures are often treated as 'black boxes,' making it difficult for students to understand how data transforms through convolutional and recurrent layers.",
-    solution: "Built a D3.js-based visualization engine that renders the internal state of the network in real-time. Users can input custom datasets and watch the activation maps update dynamically.",
+    solution: "Built a complete CRNN architecture for handwritten text recognition: CNN layers extract visual features, recurrent layers model character sequences, and CTC enables alignment-free training without pre-segmented labels.",
     features: [
-      "Layer-wise Activation Heatmaps",
-      "Interactive Data Flow Diagram",
-      "Custom Model Import (ONNX Support)",
-      "Step-by-step Execution Mode"
+      "End-to-end CRNN model (CNN + RNN + CTC) for handwritten text recognition",
+      "CNN-based visual feature extraction from word and line images",
+      "CTC (Connectionist Temporal Classification) for alignment-free training",
+      "Trained on 100K+ handwritten samples for stronger robustness and generalization"
     ],
     tech: ["Python", "D3.js", "TensorFlow", "Flask", "NumPy"],
     ascii: "/_\\",
-    impact: "Adopted by 3 university courses as a primary teaching aid, simplifying complex neural architecture concepts.",
+    impact: "Large-scale 100K+ sample training significantly improved robustness and generalization across diverse handwriting styles.",
     className: "md:col-span-1 md:row-span-1",
     sourceUrl: "https://github.com/Mohammad-Ghouse-virtuoso/Handwritten-text-recognition-crnn"
   }

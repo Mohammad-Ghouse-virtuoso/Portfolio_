@@ -65,17 +65,18 @@ const ProjectSection = () => {
                   {project.desc}
                 </p>
                 
-                {/* Show features preview on large cards */}
-                {project.className?.includes('col-span-2') && project.features && (
+                {project.features && (
                   <div className="mt-6 space-y-2">
-                    {project.features.slice(0, 3).map((feature: string, i: number) => (
-                      <div key={i} className="flex items-center gap-2 text-xs text-text-muted">
-                        <span className="text-accent-glow">▹</span>
-                        <span className="truncate">{feature.split('(')[0].trim()}</span>
-                      </div>
-                    ))}
+                    {project.features
+                      .slice(0, project.className?.includes('col-span-2') ? 3 : 2)
+                      .map((feature: string, i: number) => (
+                        <div key={i} className="flex items-center gap-2 text-xs text-text-muted">
+                          <span className="text-accent-glow">▹</span>
+                          <span className="truncate">{feature.split('(')[0].trim()}</span>
+                        </div>
+                      ))}
                     {project.impact && (
-                      <p className="mt-4 text-xs text-accent-indigo/80 font-mono">
+                      <p className="mt-4 text-xs text-accent-indigo/80 font-mono leading-relaxed">
                         ↗ {project.impact.split('.')[0]}.
                       </p>
                     )}
