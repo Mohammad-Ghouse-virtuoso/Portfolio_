@@ -47,3 +47,17 @@ bio.txt
 contacts.txt
 interests.txt
 skills.txt
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+credentials.json
+service-account*.json
+GCP.json
+__pycache__/
+*.pyc
+.venv/
+venv/
+build/
+.next/
